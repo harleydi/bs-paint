@@ -52,8 +52,10 @@ let isMouseDown = false
 // (Note the singular or plural used in that sentence!)
 let brush = document.querySelector('.current-brush')
 let palletColors = document.querySelectorAll('.palette-color')
+let palletIcon = document.querySelector('.pallet-icon')
 let squares = document.querySelectorAll('.square')
 let app = document.querySelector('.app')
+let darkModeBtn = document.querySelector('#light-dark-mode')
 
 /****************************
  * EVENT LISTENER FUNCTIONS *
@@ -97,6 +99,10 @@ app.addEventListener('mouseup', function(){
 
 app.addEventListener('mousedown', function(){
   isMouseDown = true
+})
+
+darkModeBtn.addEventListener('click', function() {
+  app.classList.toggle('dark-mode')
 })
 
 

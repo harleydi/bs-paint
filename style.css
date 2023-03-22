@@ -1,15 +1,33 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .app {
   display: flex;
-  height: 500px;
+  height: 100%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .headings {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#light-dark-mode {
+  position: absolute;
+  right: 100px;
+}
+
+.dark-mode {
+  background: #252323;
+  color: #F4F3EE;
 }
 
 .brush-selection {
@@ -53,7 +71,7 @@
   grid-template-rows: repeat(10, 1fr);
   grid-template-columns: repeat(10, 1fr);
   height: 300px;
-  width: 300px;
+  width: 600px;
   border: 1px solid black;
 }
 
@@ -79,4 +97,16 @@
 
 .color-5 {
   background-color: white;
+}
+
+.color-6 {
+  background-color: #C0A9B0;
+}
+
+.color-7 {
+  background-color: #6987C9;
+}
+
+.color-8 {
+  background-color: #7CFFCB;
 }
