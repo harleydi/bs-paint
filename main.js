@@ -42,14 +42,18 @@ while (count <= gridWidth * gridWidth) {
 // ALSO.
 // You do not have to follow the sections below. If you're doing your functions inline, it doesn't make a lot of sense to separate the event listener functions from their wiring!
 
+let isMouseDown = false
+
 /***********
  * QUERIES *
 ***********/
 
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
-
-
+let brush = document.querySelector('.current-brush')
+let palletColors = document.querySelectorAll('.palette-color')
+let squares = document.querySelectorAll('.square')
+let app = document.querySelector('.app')
 
 /****************************
  * EVENT LISTENER FUNCTIONS *
@@ -60,6 +64,41 @@ while (count <= gridWidth * gridWidth) {
 // empty at first, though a console.log just to know they're being
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
+
+palletColors.forEach((color) => {
+  color.addEventListener('click', function(){
+    let palletCL = color.classList 
+    console.log('clicked')
+    console.log(palletCL[1])
+    brush.classList.replace(brush.classList[1], palletCL[1]);
+    // brush.classList.remove(brush.classList[1])
+    console.log(brush.classList)
+    
+  })
+})
+
+
+
+squares.forEach((square) => {
+  square.addEventListener('mouseenter', function(){
+    let brushColor = brush.classList[1] 
+
+    if (isMouseDown === true) {
+      square.classList.replace(square.classList[1], brushColor);
+    }
+    
+  })
+})
+
+
+app.addEventListener('mouseup', function(){
+  isMouseDown = false
+})
+
+app.addEventListener('mousedown', function(){
+  isMouseDown = true
+})
+
 
 
 
